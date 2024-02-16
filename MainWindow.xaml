@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:practica"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" WindowState="Maximized" Background="Bisque">
+    <Window.Resources>
+        <ControlTemplate x:Key="sss" TargetType="Button">
+            <Canvas>
+                <Border x:Name="ZZZ" CornerRadius="25" Background="{TemplateBinding Background}"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Canvas>
+        </ControlTemplate>
+    </Window.Resources>
+    <Canvas Width="600" Height="400">
 
-    </Grid>
+
+
+        <TextBlock Text="Авторизация"  Foreground="OrangeRed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="50" FontWeight="Normal" Canvas.Left="151" Canvas.Top="10"/>
+        <TextBox x:Name="Log" Grid.Row="1" Grid.Column="1" Background="Beige" BorderBrush="LightPink" BorderThickness="3" Height="50" Width="400" HorizontalAlignment="Center" FontSize="20" Text="Введите логин/почту" GotFocus="Log_GotFocus" LostFocus="Log_LostFocus" Canvas.Left="87" Canvas.Top="116" VerticalAlignment="Top"/>
+        <TextBox x:Name="Pass"  Grid.Row="2" Grid.Column="1" Background="Beige" BorderBrush="LightPink" BorderThickness="3" Height="50" Width="400" HorizontalAlignment="Left" FontSize="20" Visibility="Visible" Canvas.Left="87" Canvas.Top="200" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="Pass2" ToolTip="Введите пароль"  Grid.Row="2" Grid.Column="1" Background="Beige" BorderBrush="LightPink" BorderThickness="3" Height="50" Width="400" HorizontalAlignment="Center" FontSize="20" Visibility="Visible" Canvas.Left="87" Canvas.Top="200" VerticalAlignment="Top" />
+
+       
+        <Button x:Name="Enter" FontSize="20" Click="Enter_Click" Content="Войти" Grid.Column="1" Grid.Row="3" BorderBrush="LightPink" BorderThickness="3" Background="Beige" Width="238" Height="35"  VerticalAlignment="Top" Canvas.Left="181" Canvas.Top="292" HorizontalAlignment="Center" />
+        <TextBlock  Name="Error" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+        <Button x:Name="Reg" FontSize="20" Click="Reg_Click" Content="Регистрация" Grid.Column="1" Grid.Row="4" BorderBrush="LightPink" BorderThickness="3" Background="Beige" Width="324" Height="35"  Foreground="Black" VerticalAlignment="Top" Canvas.Left="138" Canvas.Top="347" HorizontalAlignment="Center"/>
+        <Button x:Name="ErrorBT"  Click="ErrorBT_Click" Grid.ColumnSpan="3" Grid.RowSpan="6" Visibility="Hidden" Template="{StaticResource sss}">
+            <Button.Background>
+                <ImageBrush/>
+            </Button.Background>
+        </Button>
+    </Canvas>
 </Window>
